@@ -11,12 +11,12 @@ export default function Model({ ...props }) {
     "/model-with-animations.glb"
   );
   const { actions } = useAnimations(animations, group);
-
+  
   useEffect(() => {
     actions["Armature|mixamo.com|Layer0"].play();
   });
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} scale={[1, 1, 1]}>
       <primitive object={nodes.Hips} />
       <skinnedMesh
         geometry={nodes.Wolf3D_Body.geometry}
