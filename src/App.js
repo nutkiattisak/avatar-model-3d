@@ -1,17 +1,34 @@
 // App.js
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "./Model";
+import bg from "./bg.png";
 
 export default function App() {
   return (
     <div style={{ overflow: "hidden" }}>
-      <div style={{ position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+      <img
+        src={bg}
+        alt={"sdsd"}
+        style={{
+          width: "100%",
+          height: "100vh",
+          objectFit: "cover"
+        }}
+      />
+
+      <div
+        style={{
+          position: "fixed",
+          top: "60%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
         <Canvas
           camera={{ position: [2, 0, 12.25], fov: 15 }}
           style={{
-            backgroundColor: "#111a21",
             width: "100vw",
             height: "100vh",
             zIndex: 0,
